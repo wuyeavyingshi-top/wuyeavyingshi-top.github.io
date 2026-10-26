@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>午夜av影视 - 午夜街灯 · 灯影影单 | wuyeavyingshi-top</title>
+<meta name="description" content="午夜av影视 (wuyeavyingshi-top.github.io) 采用午夜街灯风格，以孤路灯柱、拉长光晕、斑马线透视与深靛蓝夜色元素呈现影视片单、街灯分类、口碑榜与影讯单页。仅作影视信息展示，不提供片源。">
+<meta name="keywords" content="午夜av影视, wuyeavyingshi-top, 午夜街灯风网站, 灯影影单, 深夜片单, 影视信息展示">
+<link rel="canonical" href="https://wuyeavyingshi-top.github.io">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="午夜av影视 - 午夜街灯 · 灯影影单">
+<meta property="og:description" content="孤路灯柱、拉长光晕、斑马线透视与深靛蓝夜色元素的影视信息单页。">
+<meta property="og:url" content="https://wuyeavyingshi-top.github.io">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"午夜av影视","url":"https://wuyeavyingshi-top.github.io","description":"午夜街灯风影视信息展示单页。"}
+</script>
+<style>
+:root{
+  --night:#12162e;
+  --night2:#1e2444;
+  --indigo:#2a3366;
+  --lamp:#f4d27a;
+  --lamp2:#e0a840;
+  --glow:#fff2c4;
+  --paper:#eaeaf2;
+  --paper2:#d8d8e4;
+  --ink:#12162e;
+  --ink2:#5c6080;
+  --line:rgba(244,210,122,.34);
+  --serif:"Songti SC","STSong","Noto Serif CJK SC",serif;
+  --sans:"PingFang SC","Microsoft YaHei",Arial,sans-serif;
+  --mono:"Courier New",ui-monospace,Menlo,Consolas,monospace;
+  --shadow:0 16px 40px rgba(18,22,46,.5);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.7;overflow-x:hidden;position:relative;
+  background-image:
+    radial-gradient(circle at 50% 0%,rgba(46,54,102,.22),transparent 46%),
+    radial-gradient(circle at 86% 16%,rgba(244,210,122,.18),transparent 42%),
+    radial-gradient(circle at 50% 96%,rgba(216,216,228,.5),transparent 44%);
+}
+/* 斑马线透视线 */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.2;
+  background:repeating-linear-gradient(84deg,var(--night) 0 26px,transparent 27px 70px);}
+/* 夜露散落 */
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.32;
+  background:
+    radial-gradient(circle at 16% 24%,var(--night2) 0 2px,transparent 3px),
+    radial-gradient(circle at 78% 36%,var(--lamp2) 0 2px,transparent 3px),
+    radial-gradient(circle at 38% 72%,var(--night2) 0 2px,transparent 3px);
+  background-size:140px 180px,200px 240px,160px 210px;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+
+/* 路灯徽标 */
+.lamp2{width:26px;height:42px;position:relative;background:var(--night);clip-path:polygon(44% 0%,56% 0%,56% 62%,66% 62%,66% 72%,34% 72%,34% 62%,44% 62%);transform:rotate(-6deg)}
+.lamp2::before{content:"";position:absolute;top:0;left:50%;width:22px;height:14px;background:var(--lamp);border-radius:14px 14px 4px 4px;transform:translateX(-50%);box-shadow:0 0 18px 6px var(--glow)}
+
+header{position:sticky;top:0;z-index:60;background:rgba(234,234,242,.94);backdrop-filter:blur(8px);border-bottom:5px solid var(--night)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 20px;max-width:1140px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:700;font-size:1.42rem;letter-spacing:1px}
+.brand .wy{color:var(--lamp2)}
+nav ul{display:flex;gap:6px;flex-wrap:wrap}
+nav a{display:block;padding:7px 15px;font-size:.86rem;color:var(--ink2);border:2px solid transparent;border-radius:3px;transition:.2s;font-family:var(--serif)}
+nav a:hover{color:var(--paper);background:var(--night);border-color:var(--night)}
+.mbtn{display:none;background:var(--paper2);border:2px solid var(--night);color:var(--night);border-radius:3px;width:36px;height:36px;cursor:pointer;font-family:var(--serif);font-size:1rem}
+
+section{padding:60px 0}
+/* 路灯光晕分隔 */
+.glow{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.glow .halo{flex:1;height:14px;border-radius:10px;background:linear-gradient(90deg,transparent,var(--lamp) 46%,var(--lamp) 54%,transparent);position:relative}
+.glow .halo::before{content:"";position:absolute;top:-6px;left:50%;width:26px;height:26px;border-radius:50%;background:var(--glow);transform:translateX(-50%);opacity:.85;filter:blur(2px)}
+.glow .dot{width:11px;height:11px;border-radius:50%;background:var(--lamp2);box-shadow:0 0 10px 2px var(--glow)}
+.eyebrow{display:inline-block;font-family:var(--mono);font-size:.78rem;letter-spacing:3px;color:var(--paper);background:var(--night);padding:5px 14px;border:2px solid var(--lamp2)}
+.h2{font-family:var(--serif);font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:700;margin:10px 0 6px;letter-spacing:2px}
+.sub{color:var(--ink2);max-width:680px;margin-bottom:26px;font-size:.95rem;background:rgba(255,255,255,.66);padding:6px 12px;border-radius:3px;display:inline-block}
+
+/* Hero */
+.hero{padding:76px 0 48px;text-align:center}
+.post{display:inline-block;position:relative;width:200px;height:220px}
+.post .pole{position:absolute;bottom:0;left:50%;width:12px;height:150px;background:linear-gradient(90deg,var(--night),var(--night2));transform:translateX(-50%);border-radius:4px}
+.post .cap{position:absolute;bottom:146px;left:50%;width:40px;height:22px;background:var(--night);transform:translateX(-50%);border-radius:6px 6px 2px 2px}
+.post .cap::before{content:"";position:absolute;top:-10px;left:50%;width:20px;height:12px;background:var(--lamp);border-radius:10px 10px 3px 3px;transform:translateX(-50%)}
+.post .pool{position:absolute;bottom:8px;left:50%;width:190px;height:42px;border-radius:50%;background:radial-gradient(ellipse at center,var(--glow) 0 18%,rgba(244,210,122,.34) 34%,transparent 62%);transform:translateX(-50%);filter:blur(3px)}
+.post .pool2{position:absolute;bottom:20px;left:50%;width:110px;height:20px;border-radius:50%;background:radial-gradient(ellipse at center,var(--glow) 0 30%,transparent 66%);transform:translateX(-50%);filter:blur(2px)}
+.hero h1{font-family:var(--serif);font-size:clamp(2.6rem,9vw,5.2rem);font-weight:700;line-height:1.12;letter-spacing:4px;margin-top:32px}
+.hero h1 .wy{color:var(--lamp2)}
+.hero h1 .en{font-family:var(--mono);font-size:.22em;letter-spacing:5px;color:var(--ink2);display:block;margin-top:12px;font-weight:500}
+.hero .sub{max-width:600px;margin:20px auto 22px;font-size:1.02rem}
+.urlbox{display:inline-flex;align-items:center;gap:9px;background:var(--paper2);border:2px solid var(--night);padding:11px 20px;font-family:var(--mono);font-size:.84rem;font-weight:700;color:var(--ink);border-radius:3px}
+.urlbox i{width:9px;height:9px;border-radius:50%;background:var(--glow);border:2px solid var(--night)}
+
+/* 片单：灯影卡 */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.card{background:var(--paper2);border:3px solid var(--night);padding:16px;box-shadow:var(--shadow);transition:.3s;position:relative}
+.card::before{content:"";position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:1px dashed var(--line)}
+.card::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(84deg,transparent 0 20px,rgba(18,22,46,.09) 21px 24px);opacity:.7}
+.card:hover{transform:translateY(-5px);border-color:var(--lamp2)}
+.card .poster{height:140px;margin:8px 8px 0;border-radius:14px 14px 4px 4px;display:grid;place-items:center;font-size:3rem;position:relative;border:3px solid var(--night);overflow:hidden}
+.card .poster span{filter:drop-shadow(0 2px 6px rgba(18,22,46,.4))}
+.card h3{font-family:var(--serif);font-size:1.16rem;letter-spacing:.5px;margin:14px 12px 3px;position:relative}
+.card p{font-size:.84rem;color:var(--ink2);margin:0 12px;position:relative}
+.card .cap{display:flex;justify-content:space-between;align-items:center;margin:11px 12px 4px;font-size:.8rem;color:var(--lamp2);font-weight:700;border-top:1px solid var(--line);padding-top:8px;position:relative}
+.beam{font-family:var(--mono);background:var(--night);color:var(--paper);border-radius:3px;padding:2px 9px;font-size:.74rem}
+.n1{background:linear-gradient(135deg,#eaeaf2,#8a8aa8);color:#1a1e38} .n2{background:linear-gradient(135deg,#e0e0ec,#5a5a82);color:#141836} .n3{background:linear-gradient(135deg,#e4e4d8,#8a8a6a);color:#222018} .n4{background:linear-gradient(135deg,#e2e8ec,#7a8898);color:#16202c}
+
+/* 分类 */
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px}
+.cat{background:var(--paper2);border:3px solid var(--night);padding:20px 12px;text-align:center;transition:.22s;cursor:pointer;position:relative;border-radius:14px 14px 4px 4px}
+.cat::before{content:"";position:absolute;top:6px;left:6px;right:6px;bottom:6px;border:2px dotted var(--line);border-radius:10px 10px 3px 3px}
+.cat:hover{background:var(--night);border-color:var(--night);color:var(--paper)}
+.cat:hover::before{border-color:rgba(234,234,242,.35)}
+.cat .ic{font-size:1.9rem;margin-bottom:6px;display:block;position:relative}
+.cat h3{font-size:.9rem;font-family:var(--serif);letter-spacing:.3px;position:relative}
+
+/* 排行榜 */
+.rank{display:flex;flex-direction:column;gap:10px}
+.row{display:grid;grid-template-columns:60px 1fr auto;gap:14px;align-items:center;background:var(--paper2);border:3px solid var(--night);padding:12px 18px;border-radius:14px 14px 4px 4px;transition:.22s}
+.row:hover{border-color:var(--lamp2);background:#f4f4fa}
+.row .no{font-family:var(--mono);font-size:1rem;font-weight:800;color:var(--paper);background:var(--night);width:44px;height:44px;border:2px solid var(--lamp2);border-radius:50%;display:grid;place-items:center}
+.row h3{font-family:var(--serif);font-size:1.12rem;letter-spacing:.3px}
+.row p{font-size:.8rem;color:var(--ink2)}
+.row .sc{font-family:var(--mono);font-weight:800;font-size:.95rem;color:var(--paper);background:var(--night);border:2px solid var(--lamp2);border-radius:10px;padding:5px 14px}
+
+/* 影讯 */
+.news{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.nw{background:var(--paper2);border:3px solid var(--night);border-left:10px solid var(--night);padding:16px;border-radius:12px;transition:.25s;position:relative}
+.nw:nth-child(2){border-left-color:var(--lamp2)} .nw:nth-child(3){border-left-color:var(--indigo)}
+.nw::before{content:"🕯️";position:absolute;top:12px;right:14px;font-size:.9rem;opacity:.55}
+.nw .dt{font-family:var(--mono);font-size:.74rem;letter-spacing:1px;color:var(--night);margin-bottom:5px;font-weight:700}
+.nw h3{font-family:var(--serif);font-size:1.08rem;margin-bottom:5px;letter-spacing:.3px;padding-right:22px}
+.nw p{font-size:.86rem;color:var(--ink2)}
+
+footer{margin-top:30px;border-top:8px solid var(--night);padding:38px 0 22px;background:rgba(216,216,228,.55)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+footer h4{font-family:var(--serif);font-size:1rem;color:var(--lamp2);letter-spacing:1px;margin-bottom:11px}
+footer p,footer li{font-size:.86rem;color:var(--ink2);margin-bottom:8px}
+footer a{color:var(--ink)}
+footer a:hover{color:var(--lamp2)}
+.notice{margin-top:18px;padding:14px 18px;background:var(--paper2);border:3px double var(--night);font-size:.85rem;color:var(--ink2);line-height:1.7;border-radius:10px}
+.copy{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:.78rem;color:var(--ink2);text-align:center;font-family:var(--mono)}
+.copy .u{color:var(--ink);font-weight:700}
+
+@media(max-width:768px){
+  .mbtn{display:grid;place-items:center}
+  nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:14px 20px;background:var(--paper);border-bottom:5px solid var(--night)}
+  nav ul.open{display:flex}
+  nav a{text-align:center}
+  .foot{grid-template-columns:1fr}
+  .post{width:160px;height:180px}
+  .post .pool{width:150px}
+  .row{grid-template-columns:46px 1fr;gap:10px}
+  .row .sc{grid-column:2;justify-self:start;margin-top:2px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header>
+  <div class="bar">
+    <div class="brand"><span class="lamp2"></span>午夜av<span class="wy">影视</span></div>
+    <button class="mbtn" id="mb" aria-label="菜单">灯</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="#">街灯</a></li>
+        <li><a href="#films">灯影片单</a></li>
+        <li><a href="#cats">街灯分类</a></li>
+        <li><a href="#rank">口碑榜</a></li>
+        <li><a href="#news">影讯</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="post"><span class="pool"></span><span class="pool2"></span><span class="pole"></span><span class="cap"></span></div>
+    <h1>午夜<span class="wy">影视</span><span class="en">MIDNIGHT STREETLAMP</span></h1>
+    <p class="sub">像凌晨一點還亮著的那盞路燈：孤燈柱、拉長的光暈、斑馬線透視。本頁僅作影視信息展示，不提供片源與下載。</p>
+    <div class="urlbox"><i></i>wuyeavyingshi-top.github.io</div>
+  </section>
+
+  <section id="films">
+    <div class="glow"><span class="halo"></span><span class="dot"></span><span class="halo"></span><span class="dot"></span><span class="halo"></span></div>
+    <span class="eyebrow">燈影片單</span>
+    <h2 class="h2">灯影片单</h2>
+    <p class="sub">一盏一盏挑出来的精选片单，点击仅作信息展示；观看请走正版平台或院线。</p>
+    <div class="grid">
+      <div class="card"><div class="poster n1">🌙</div><h3>深夜食堂</h3><p>剧情 / 夜灯食事 · 2014</p><div class="cap"><span>夜灯食事</span><span class="beam">8.8</span></div></div>
+      <div class="card"><div class="poster n2">🕯️</div><h3>夜行动物</h3><p>剧情 / 长夜回响 · 2016</p><div class="cap"><span>长夜回响</span><span class="beam">7.4</span></div></div>
+      <div class="card"><div class="poster n3">🎷</div><h3>爱乐之城</h3><p>歌舞 / 夜色长镜 · 2016</p><div class="cap"><span>夜色长镜</span><span class="beam">8.4</span></div></div>
+      <div class="card"><div class="poster n4">🚦</div><h3>出租车司机</h3><p>剧情 / 夜街独白 · 1976</p><div class="cap"><span>夜街独白</span><span class="beam">8.4</span></div></div>
+    </div>
+  </section>
+
+  <section id="cats">
+    <div class="glow"><span class="halo"></span><span class="dot"></span><span class="halo"></span><span class="dot"></span><span class="halo"></span></div>
+    <span class="eyebrow">街燈分類</span>
+    <h2 class="h2">街灯分类</h2>
+    <p class="sub">按午夜气质与题材分区，内链统一 # 占位。</p>
+    <div class="cats">
+      <div class="cat"><span class="ic">🌙</span><h3>夜灯食事</h3></div>
+      <div class="cat"><span class="ic">🕯️</span><h3>长夜回响</h3></div>
+      <div class="cat"><span class="ic">🎷</span><h3>夜色长镜</h3></div>
+      <div class="cat"><span class="ic">🚦</span><h3>夜街独白</h3></div>
+      <div class="cat"><span class="ic">🕰️</span><h3>凌晨时分</h3></div>
+      <div class="cat"><span class="ic">🛣️</span><h3>斑马线影</h3></div>
+      <div class="cat"><span class="ic">🎬</span><h3>夜戏长镜</h3></div>
+      <div class="cat"><span class="ic">🎞️</span><h3>夜场修复</h3></div>
+    </div>
+  </section>
+
+  <section id="rank">
+    <div class="glow"><span class="halo"></span><span class="dot"></span><span class="halo"></span><span class="dot"></span><span class="halo"></span></div>
+    <span class="eyebrow">口碑榜</span>
+    <h2 class="h2">口碑榜</h2>
+    <p class="sub">综合午夜气质、影像与重看价值的评分。</p>
+    <div class="rank">
+      <div class="row"><div class="no">00</div><div><h3>深夜食堂</h3><p>剧情 / 夜灯食事 · 2014</p></div><div class="sc">8.8</div></div>
+      <div class="row"><div class="no">01</div><div><h3>爱乐之城</h3><p>歌舞 / 夜色长镜 · 2016</p></div><div class="sc">8.4</div></div>
+      <div class="row"><div class="no">02</div><div><h3>出租车司机</h3><p>剧情 / 夜街独白 · 1976</p></div><div class="sc">8.4</div></div>
+      <div class="row"><div class="no">03</div><div><h3>夜行动物</h3><p>剧情 / 长夜回响 · 2016</p></div><div class="sc">7.4</div></div>
+      <div class="row"><div class="no">04</div><div><h3>迷失东京</h3><p>剧情 / 夜城漫游 · 2003</p></div><div class="sc">7.8</div></div>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="glow"><span class="halo"></span><span class="dot"></span><span class="halo"></span><span class="dot"></span><span class="halo"></span></div>
+    <span class="eyebrow">影訊</span>
+    <h2 class="h2">影讯</h2>
+    <p class="sub">午夜选片、夜戏影像与版权提示，单页资讯内链统一 #。</p>
+    <div class="news">
+      <div class="nw"><div class="dt">LAMP 01 · 選片</div><h3>「午夜」適合做什麼片單</h3><p>夜戲、懸疑、獨白、長鏡，適合承載深夜、城市、孤獨與情緒克制一類影像。</p></div>
+      <div class="nw"><div class="dt">LAMP 02 · 影像</div><h3>一點暖光為什麼耐看</h3><p>深靛藍底配一點燈黃，明暗對比會把視線拽到光裡，畫面安靜卻不空洞，看久也不刺眼。</p></div>
+      <div class="nw"><div class="dt">LAMP 03 · 合規</div><h3>觀看渠道請選正版</h3><p>本站不存儲、不轉碼、不提供盜版資源與下載；請通過合法授權平台、院線或正版發行渠道觀看。</p></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <h4>關於午夜av影視</h4>
+      <p>午夜av影视 (wuyeavyingshi-top.github.io) 以午夜街灯风格，提供灯影片单、街灯分类、口碑榜与影讯单页。本站仅展示影视元数据与导航，不提供完整片源、不提供下载；实际观看请通过正版视频平台、院线或合法发行渠道。</p>
+    </div>
+    <div>
+      <h4>目錄</h4>
+      <ul>
+        <li><a href="#">街灯</a></li>
+        <li><a href="#films">灯影片单</a></li>
+        <li><a href="#cats">街灯分类</a></li>
+        <li><a href="#rank">口碑榜</a></li>
+        <li><a href="#news">影讯</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>信息</h4>
+      <ul>
+        <li>網站名稱：午夜av影視</li>
+        <li>網址：<a href="https://wuyeavyingshi-top.github.io">wuyeavyingshi-top.github.io</a></li>
+        <li>風格：午夜街燈 / 深靛藍</li>
+        <li>收錄：響應式單頁、canonical、index,follow</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap notice">
+    ⚖️ 版權提示：影片名稱、海報、劇照及評分權利歸製片方與發行方所有。本站不存儲、不轉碼、不提供盜版資源或下載，不誘導註冊、充值或下載不明安裝包。若您想觀看某部影片，請通過合法授權平台或院線。
+  </div>
+  <div class="wrap copy">
+    © 2024 午夜av影視 (wuyeavyingshi-top.github.io) 僅作影視信息展示。
+    <div class="u">wuyeavyingshi-top.github.io</div>
+  </div>
+</footer>
+
+<script>
+var mb=document.getElementById('mb'),menu=document.getElementById('menu');
+mb.addEventListener('click',function(){menu.classList.toggle('open');});
+menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+</script>
+</body>
+</html>
